@@ -1,5 +1,6 @@
 # FLUXNET_citations
 An unofficial library of citations for the sites included in the FLUXNET database.
+
 Trevor F. Keenan
 
 ##
@@ -15,15 +16,21 @@ Updates and improvements are more than welcome.
 # File Structure
 
 F15T1_simple
+
 Provides a bib file and site characteristics table for all Tier 1 sites in FLUXNET 2015.
+
 Most likely to be updated.
 
 F15T1_extra
+
 Provides files for use with LaTeX, which allows dynamic linking of in-text citations to the reference list. 
+
 Less likely to be updated.
 
 F15_old
+
 Files that include citations for most Tier 2 sites
+
 Not updated.
 
 
