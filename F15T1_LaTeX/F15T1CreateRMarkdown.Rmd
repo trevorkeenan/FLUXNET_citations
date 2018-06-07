@@ -1,0 +1,27 @@
+---
+title: "FLUXNET 2015 references table"
+date: "`r Sys.Date()`"
+output: pdf_document
+bibliography: F15T1LaTexBib.bib
+#csl: nature.csl      # specify the bibliography style here, requires csl file to be placed in the current working directory
+---
+
+First, create a CSV file containing the RMarkdown-specific citation keys based on the site meta-info file `siteinfo_fluxnet2015.csv`. Save this as `F15T1forRmd.csv`.
+```{r warning=FALSE}
+require(readr, quietly = TRUE)
+require(dplyr, quietly = TRUE)
+
+## Read table with site meta info, complement by citation key and write to file
+cit <- read_csv('siteinfo_fluxnet2015.csv') %>% 
+  dplyr::rename( site = mysitename ) %>% 
+  select( -elv, -elv_watch, -elv_diff, -years_data ) %>% 
+  mutate( citation = paste0("[@", site ,"]") ) %>% 
+  write_csv( path="F15T1forRmd.csv" )
+```
+
+Now, create the nice big table.
+```{r warning=FALSE}
+cit %>% knitr::kable( caption = "Table: Main site characteristics, and studied periods of flux sites used in this analysis. All the data gathered from [www.fluxdata.org](www.fluxdata.org)." )
+```
+
+## References
