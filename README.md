@@ -21,13 +21,15 @@ Provides a bib file and site characteristics table for all Tier 1 sites in FLUXN
 
 Most likely to be updated.
 
-F15T1_extra
+F15T1_LaTeX
 
-Provides files for use with LaTeX, which allows dynamic linking of in-text citations to the reference list. 
+Provides files for use with LaTeX, which allows dynamic linking of
+in-text citations to the reference list. Also includes python functions
+to generate a table for a subset of sites.
 
 Less likely to be updated.
 
-F15_old
+F15_bin
 
 Files that include citations for most Tier 2 sites
 
