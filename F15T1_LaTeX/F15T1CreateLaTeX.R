@@ -5,6 +5,10 @@
 ##
 ## Written by B. Stocker (b.stocker@creaf.uab.cat)
 ##--------------------------------------------------------------------------------------------------------------
+
+## Known issues
+##  sites without references print pdf with '?' 
+
 library(dplyr)
 library(readr)
 

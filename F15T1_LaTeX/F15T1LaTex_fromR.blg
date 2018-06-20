@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: F15T1LaTex_fromR.aux
+The style file: apalike.bst
+Database file #1: F15T1LaTexBib.bib
+Warning--I didn't find a database entry for "CN-Cng"
+Warning--I didn't find a database entry for "CN-Ha2"
+Warning--I didn't find a database entry for "CZ-BK2"
+Warning--I didn't find a database entry for "DE-Akm"
+Warning--I didn't find a database entry for "DE-Obe"
+Warning--I didn't find a database entry for "DE-Spw"
+Warning--I didn't find a database entry for "DK-Fou"
+Warning--I didn't find a database entry for "NO-Adv"
+Warning--empty institution in AU-Emr
+You've used 158 entries,
+            1935 wiz_defined-function locations,
+            1339 strings with 39746 characters,
+and the built_in function-call counts, 90506 in all, are:
+= -- 8223
+> -- 6561
+< -- 8
++ -- 2514
+- -- 2436
+* -- 9298
+:= -- 16105
+add.period$ -- 475
+call.type$ -- 158
+change.case$ -- 2008
+chr.to.int$ -- 128
+cite$ -- 159
+duplicate$ -- 2223
+empty$ -- 4682
+format.name$ -- 2598
+if$ -- 16618
+int.to.chr$ -- 31
+int.to.str$ -- 0
+missing$ -- 155
+newline$ -- 792
+num.names$ -- 474
+pop$ -- 1703
+preamble$ -- 1
+purify$ -- 2008
+quote$ -- 0
+skip$ -- 1601
+stack$ -- 0
+substring$ -- 5756
+swap$ -- 177
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 948
+warning$ -- 1
+while$ -- 608
+width$ -- 0
+write$ -- 2054
+(There were 9 warnings)

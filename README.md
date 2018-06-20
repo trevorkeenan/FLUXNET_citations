@@ -24,7 +24,7 @@ Most likely to be updated.
 F15T1_LaTeX
 
 Provides files for use with LaTeX, which allows dynamic linking of
-in-text citations to the reference list. Also includes python functions
+in-text citations to the reference list. Also includes python functions and an R script
 to generate a table for a subset of sites.
 
 Less likely to be updated.
