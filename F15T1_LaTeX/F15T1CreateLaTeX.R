@@ -11,9 +11,11 @@
 
 library(dplyr)
 library(readr)
+here::i_am("F15T1_LaTeX/F15T1CreateLaTeX.R")
+library(here)
 
 ## Read table with site meta info
-cit <- read_csv('siteinfo_fluxnet2015.csv')
+cit <- read_csv(here('F15T1_LaTeX', 'siteinfo_fluxnet2015.csv'))
 cit <- cit %>% dplyr::rename( site = mysitename ) %>% select( -elv_watch, -elv_diff, -years_data )
 
 ##--------------------------------------------------------------------------------------------------------------
