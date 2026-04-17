@@ -14,9 +14,14 @@ library(readr)
 here::i_am("F15T1_LaTeX/F15T1CreateLaTeX.R")
 library(here)
 
+# change working directly to F15T1_LaTeX
+start_dir <- getwd()
+setwd(here("F15T1_LaTeX"))
+
 ## Read table with site meta info
-cit <- read_csv(here('F15T1_LaTeX', 'siteinfo_fluxnet2015.csv'))
+cit <- read_csv("siteinfo_fluxnet2015.csv")
 cit <- cit %>% dplyr::rename( site = mysitename ) %>% select( -elv_watch, -elv_diff, -years_data )
+
 
 ##--------------------------------------------------------------------------------------------------------------
 ## Create big table with in-line citation keys for LaTeX
@@ -63,7 +68,10 @@ cat( "\\end{document}", "\n", file = zz, sep = " ")
 close(zz)
 
 ## compile to PDF document and open it
-system(paste("pdflatex",  here("F15T1_LaTeX", "F15T1LaTex_fromR.tex")))
-system(paste("bibtex",  here("F15T1_LaTeX",  "F15T1LaTex_fromR")))
-system(paste("pdflatex",  here("F15T1_LaTeX",  "F15T1LaTex_fromR.tex")))
-system(paste("open",  here("F15T1_LaTeX", "F15T1LaTex_fromR.pdf")))
+system("pdflatex F15T1LaTex_fromR.tex")
+system("bibtex F15T1LaTex_fromR")
+system("pdflatex F15T1LaTex_fromR.tex")
+system("open F15T1LaTex_fromR.pdf")
+
+# return to initial directory
+setwd(start_dir)
