@@ -11,10 +11,17 @@
 
 library(dplyr)
 library(readr)
+here::i_am("F15T1_LaTeX/F15T1CreateLaTeX.R")
+library(here)
+
+# change working directly to F15T1_LaTeX
+start_dir <- getwd()
+setwd(here("F15T1_LaTeX"))
 
 ## Read table with site meta info
-cit <- read_csv('siteinfo_fluxnet2015.csv')
+cit <- read_csv("siteinfo_fluxnet2015.csv")
 cit <- cit %>% dplyr::rename( site = mysitename ) %>% select( -elv_watch, -elv_diff, -years_data )
+
 
 ##--------------------------------------------------------------------------------------------------------------
 ## Create big table with in-line citation keys for LaTeX
@@ -52,7 +59,7 @@ for (idx in seq(nrow(cit))){
 cat( "\\hline ", "\n", file = zz, sep = " ")
 cat( "\\label{tab:longtable} ", "\n", file = zz, sep = " ")
 cat( "\\end{longtable}", "\n", file = zz, sep = " ")
-cat( "\\textsuperscript{1} Negative value indicates west longitude. \\textsuperscript{2} Positive value indicates north latitude. \\textsuperscript{3} Vegetation types: deciduous broadleaf forest (DBF); evergreen broadleaf forest (EBF); evergreen needleleaf forest (ENF); grassland (GRA); mixed deciduous and evergreen needleleaf forest (MF); savanna ecosystem (SAV); shrub ecosystem (SHR); wetland (WET); unknown (UNK). \\textsuperscript{4} References.", "\n", file = zz, sep = " ")
+cat( "\\textsuperscript{1} Negative value indicates west longitude. \\textsuperscript{2} Positive value indicates north latitude. \\textsuperscript{3} Vegetation types: deciduous broadleaf forest (DBF); evergreen broadleaf forest (EBF); evergreen needleleaf forest (ENF); grassland (GRA); mixed deciduous and evergreen needleleaf forest (MF); savanna ecosystem (SAV); open shrubland ecosystem (OSH); closed shrubland ecosystem (CSH); wetland (WET); unknown (UNK). \\textsuperscript{4} References.", "\n", file = zz, sep = " ")
 cat( "\\medskip", "\n", file = zz, sep = " ")
 cat( "\\bibliographystyle{apalike}", "\n", file = zz, sep = " ")
 cat( "\\bibliography{F15T1LaTexBib}", "\n", file = zz, sep = " ")
@@ -65,3 +72,6 @@ system("pdflatex F15T1LaTex_fromR.tex")
 system("bibtex F15T1LaTex_fromR")
 system("pdflatex F15T1LaTex_fromR.tex")
 system("open F15T1LaTex_fromR.pdf")
+
+# return to initial directory
+setwd(start_dir)
